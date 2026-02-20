@@ -4,6 +4,27 @@ A fully functional Uniswap V2-style Decentralized Exchange deployed on **Robinho
 
 > *"Take from the whales, give to the community"*
 
+## 🚀 Live Deployment
+
+**Frontend**: Deploy on Netlify/Vercel from GitHub
+
+**Network**: Robinhood Chain Testnet (Chain ID: 46630)
+
+## 📦 Deployed Contracts
+
+| Contract | Address |
+|----------|---------|
+| **Factory** | [`0xff6028E46364D8e691f5389C522F53133c0f1917`](https://explorer.testnet.chain.robinhood.com/address/0xff6028E46364D8e691f5389C522F53133c0f1917) |
+| **Router** | [`0x0Cb47D1A9Fa3028eCC12Dd4688ABdE313A7a194e`](https://explorer.testnet.chain.robinhood.com/address/0x0Cb47D1A9Fa3028eCC12Dd4688ABdE313A7a194e) |
+| **WETH** | [`0x948E15C33F3e32df7673464ad64DF3b649b928ce`](https://explorer.testnet.chain.robinhood.com/address/0x948E15C33F3e32df7673464ad64DF3b649b928ce) |
+| **WOOD** | [`0x08F5FEeA797B3eAE564aAACeadDA36e4c123Ce5C`](https://explorer.testnet.chain.robinhood.com/address/0x08F5FEeA797B3eAE564aAACeadDA36e4c123Ce5C) |
+| **WOOD/WETH Pair** | [`0x6686EF39a51e22271f75f53B525Dcd2a974d13CA`](https://explorer.testnet.chain.robinhood.com/address/0x6686EF39a51e22271f75f53B525Dcd2a974d13CA) |
+
+### Pool Reserves
+- **WOOD**: 1,000 WOOD
+- **WETH**: 0.008 WETH
+- **Price**: 1 WOOD ≈ 0.000008 ETH
+
 ## 🚀 Features
 
 - **Uniswap V2-style AMM**: Constant product formula for token swaps
@@ -12,34 +33,6 @@ A fully functional Uniswap V2-style Decentralized Exchange deployed on **Robinho
 - **Slippage Protection**: Configurable slippage tolerance
 - **Deadline Protection**: Transaction expiry for safety
 - **Dark Theme UI**: Modern, responsive design with Tailwind CSS
-
-## 📦 Smart Contracts
-
-| Contract | Address |
-|----------|---------|
-| Factory | `0x9755D7DE23d3fBdF40Df84b1C78Ff5Ff9E1f2C58` |
-| Router | `0xe345e3cce69455ae8a61fE4cB8C8d8b8b7c8d9e0` |
-| WETH | `0xB4FBF271143F4FBf7B91A5ded31805e42D220A0d` |
-| WOOD (Governance Token) | `0xd8b8b7c8d9e0e345e3cce69455ae8a61fE4cB8C8` |
-
-### Contract Architecture
-
-```
-contracts/
-├── core/
-│   ├── SherwoodFactory.sol    # Pair creation & registry
-│   ├── SherwoodPair.sol       # AMM pair with liquidity
-│   └── SherwoodERC20.sol      # ERC20 with EIP-2612 permit
-├── periphery/
-│   ├── SherwoodRouter02.sol   # User-facing router
-│   └── libraries/
-│       ├── SherwoodLibrary.sol # Price calculations
-│       ├── SafeMath.sol        # Overflow protection
-│       └── TransferHelper.sol  # Safe transfers
-└── tokens/
-    ├── WETH.sol               # Wrapped ETH
-    └── WOOD.sol               # Governance token
-```
 
 ## 🛠️ Tech Stack
 
@@ -60,11 +53,6 @@ contracts/
 
 ## 🏃 Quick Start
 
-### Prerequisites
-- Node.js 18+
-- npm or bun
-- MetaMask or compatible wallet
-
 ### 1. Clone & Install
 
 ```bash
@@ -78,29 +66,14 @@ cd contracts && npm install
 cd ../frontend && npm install
 ```
 
-### 2. Configure Environment
-
-```bash
-# contracts/.env
-PRIVATE_KEY=your_private_key_here
-RPC_URL=https://rpc.testnet.chain.robinhood.com
-```
-
-### 3. Deploy Contracts (already deployed)
-
-```bash
-cd contracts
-npx hardhat run scripts/deploy.js --network robinhoodTestnet
-```
-
-### 4. Run Frontend
+### 2. Run Frontend
 
 ```bash
 cd frontend
 npm run dev
 ```
 
-### 5. Build for Production
+### 3. Build for Production
 
 ```bash
 cd frontend
@@ -126,21 +99,16 @@ Visit the [Robinhood Chain Faucet](https://faucet.testnet.chain.robinhood.com) t
 
 ### Swapping Tokens
 1. Connect wallet
-2. Select input/output tokens
+2. Select input/output tokens (WETH or WOOD)
 3. Enter amount to swap
 4. Approve token (if first time)
 5. Confirm swap
 
 ### Adding Liquidity
-1. Select token pair
+1. Go to Pool tab
 2. Enter amounts for both tokens
 3. Approve both tokens (if first time)
 4. Add liquidity to receive LP tokens
-
-### LP Tokens
-- LP tokens represent your share of the pool
-- Earn 0.3% fee from all trades in the pool
-- Can be redeemed for underlying tokens anytime
 
 ## 🔐 Security Features
 
@@ -154,10 +122,8 @@ Visit the [Robinhood Chain Faucet](https://faucet.testnet.chain.robinhood.com) t
 
 MIT License
 
-## 🤝 Contributing
-
-Contributions welcome! Please open an issue or PR.
-
 ---
 
 Built with ❤️ for Robinhood Chain Testnet
+
+🏹 *"Take from the whales, give to the people"*
