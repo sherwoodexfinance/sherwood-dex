@@ -1,0 +1,22 @@
+{
+  "name": "sherwood-contracts",
+  "version": "1.0.0",
+  "description": "Sherwood DEX Smart Contracts",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts --network robinhoodTestnet",
+    "deploy:local": "hardhat run scripts/deploy.ts --network hardhat"
+  },
+  "keywords": ["dex", "defi", "uniswap", "blockchain"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "hardhat": "^2.22.0",
+    "typescript": "^5.0.0"
+  }
+}
