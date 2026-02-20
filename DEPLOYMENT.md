@@ -1,83 +1,49 @@
 # 🏹 Sherwood DEX - Deployment Summary
 
-## ✅ Smart Contracts Deployed
-
-**Network:** Robinhood Chain Testnet (Chain ID: 46630)
+## Deployed Contracts (Robinhood Chain Testnet - Chain ID: 46630)
 
 | Contract | Address |
 |----------|---------|
-| SherwoodFactory | `0x75181dD85c7F2beBA5e
-[truncated]b38` |
-| SherwoodRouter02 | `0xaC8697137a742733A
-[truncated]0e8a61` |
-| WOOD Token | `0xd2c95208d856B6
-[truncated]D2D1` |
-| WETH | `0x3Fe1D93f8C8c09
-[truncated]f93` |
+| **Factory** | `0xff6028E46364D8e691f5389C522F53133c0f1917` |
+| **Router** | `0x0Cb47D1A9Fa3028eCC12Dd4688ABdE313A7a194e` |
+| **WETH** | `0x948E15C33F3e32df7673464ad64DF3b649b928ce` |
+| **WOOD** | `0x08F5FEeA797B3eAE564aAACeadDA36e4c123Ce5C` |
+| **WOOD/WETH Pair** | `0x6686EF39a51e22271f75f53B525Dcd2a974d13CA` |
 
-## 📁 Project Structure
+**INIT_CODE_HASH:** `0x533f506a32c546c3ec712ddf66d70647dfb421e0fe45e325e3cce69455ae8a61`
 
-```
-sherwood/
-├── contracts/          # Hardhat project
-│   ├── contracts/      # Solidity contracts
-│   ├── scripts/        # Deployment scripts
-│   └── test/           # Test files
-├── frontend/           # React + Vite + TypeScript
-│   ├── src/
-│   │   ├── components/ # SwapCard, PoolCard, Header
-│   │   ├── hooks/      # useSwap, useLiquidity, usePairs
-│   │   ├── config/     # Chain config, addresses
-│   │   └── abis/       # Contract ABIs
-│   └── dist/           # Built frontend
-└── README.md
-```
+## Pool Status
 
-## 🚀 Deploy Frontend
+| Pool | Token0 | Token1 | Reserve0 | Reserve1 |
+|------|--------|--------|----------|----------|
+| WOOD/WETH | 1000 WOOD | 0.008 WETH | 1000.0 | 0.008 |
 
-### Option 1: Vercel (Recommended)
-1. Go to https://vercel.com
-2. Click "New Project"
-3. Import: `https://github.com/sherwoodexfinance/sherwood-dex`
-4. Framework Preset: Vite
-5. Root Directory: `frontend`
-6. Build Command: `npm run build`
-7. Output Directory: `dist`
-8. Click Deploy
-
-### Option 2: Netlify
-1. Go to https://netlify.com
-2. Click "Add new site" → "Import an existing project"
-3. Connect GitHub and select `sherwood-dex`
-4. Build command: `cd frontend && npm install && npm run build`
-5. Publish directory: `frontend/dist`
-6. Click Deploy
-
-## 🧪 Testing
+## Deploy Scripts
 
 ```bash
+# Deploy contracts
 cd contracts
-npx hardhat test
+npx hardhat run scripts/deploy.js --network robinhoodTestnet
+
+# Setup pool (if needed)
+npx hardhat run scripts/debug-pair.js --network robinhoodTestnet
 ```
 
-## 📝 Get Testnet ETH
+## How to Add More Liquidity
 
-Use the Robinhood Chain Testnet Faucet:
-https://faucet.testnet.chain.robinhood.com
+1. Connect wallet to Robinhood Chain Testnet
+2. Get testnet ETH from faucet
+3. Use the Pool tab in the UI to add liquidity
 
-## 🔗 Links
+## Network Config
 
-- **GitHub:** https://github.com/sherwoodexfinance/sherwood-dex
-- **Explorer:** https://explorer.testnet.chain.robinhood.com
-
-## 🎯 Features
-
-- ✅ Swap tokens (Uniswap V2-style AMM)
-- ✅ Add/Remove liquidity
-- ✅ View all trading pairs
-- ✅ Wallet connection (RainbowKit)
-- ✅ Dark theme UI
-- ✅ Responsive design
+```
+Network: Robinhood Chain Testnet
+Chain ID: 46630
+RPC: https://rpc.testnet.chain.robinhood.com
+Explorer: https://explorer.testnet.chain.robinhood.com
+```
 
 ---
-🏹 "Take from the whales, give to the people"
+
+🏹 **"Take from the whales, give to the people"**
